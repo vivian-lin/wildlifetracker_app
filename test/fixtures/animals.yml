@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  common_name: MyString
+  latin_name: MyString
+  kingdom: MyString
+
+two:
+  common_name: MyString
+  latin_name: MyString
+  kingdom: MyString

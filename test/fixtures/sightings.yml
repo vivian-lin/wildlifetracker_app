@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  animal_id: 
+  date: 2016-09-13
+  time: 2016-09-13 11:58:31
+  latitude: 9.99
+  longitude: 9.99
+
+two:
+  animal_id: 
+  date: 2016-09-13
+  time: 2016-09-13 11:58:31
+  latitude: 9.99
+  longitude: 9.99
