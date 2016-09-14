@@ -25,8 +25,10 @@
   <ul>
     <% @animals.sightings.each do |sighting| %>
       <li>
-        <%= sighting.date %>
+        <a href="/sightings/<%=sighting.id%>"><%= sighting.date %></a>
       </li>
     <%end%>
   </ul>
 </p>
+
+<%= link_to 'New Sighting', new_sighting_path() + "?animal_id=" + @animal.id.to_s %>

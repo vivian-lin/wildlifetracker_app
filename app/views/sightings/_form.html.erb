@@ -30,6 +30,9 @@
     <%= f.label :longitude %><br>
     <%= f.text_field :longitude %>
   </div>
+  <div class="field">
+    <%= select(:sighting, :region, options_for_select([["North", "North"],["East", "East"],["West", "West"],["South", "South"]]))%>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

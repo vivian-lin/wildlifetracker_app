@@ -10,6 +10,7 @@
       <th>Time</th>
       <th>Latitude</th>
       <th>Longitude</th>
+      <th>Region</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,9 +20,10 @@
       <tr>
         <td><%= sighting.animal.common_name %></td>
         <td><%= sighting.date %></td>
-        <td><%= sighting.time %></td>
+        <td><%= sighting.time.strftime("%H:%M") %></td>
         <td><%= sighting.latitude %></td>
         <td><%= sighting.longitude %></td>
+        <td><%= sighting.region %></td>
         <td><%= link_to 'Show', sighting %></td>
         <td><%= link_to 'Edit', edit_sighting_path(sighting) %></td>
         <td><%= link_to 'Destroy', sighting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -33,3 +35,18 @@
 <br>
 
 <%= link_to 'New Sighting', new_sighting_path %>
+
+<br>
+<br>
+<%= flash.now[:alert] %>
+<br>
+<h3>Search for animal sightings by date range:</h3>
+<form action="/sightings" method="get">
+  <label for="start_date">Start date</label>
+  <input id="start_date" name="start_date" type="text">
+  <label for="end_date">End date</label>
+  <input id="end_date" name="end_date" type="text">
+  <label for="end_date">Region</label>
+  <%= select_tag("region", options_for_select([["North", "North"],["East", "East"],["West", "West"],["South", "South"]]))%>
+  <button>Run report</button>
+</form>
