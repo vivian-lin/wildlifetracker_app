@@ -22,7 +22,7 @@
 
 <h3>Sightings:</h3>
 <p>
-  <ul>
+  <ul id="sighting_list">
     <% @animals.sightings.each do |sighting| %>
       <li>
         <a href="/sightings/<%=sighting.id%>"><%= sighting.date %></a>
@@ -31,4 +31,17 @@
   </ul>
 </p>
 
-<%= link_to 'New Sighting', new_sighting_path() + "?animal_id=" + @animal.id.to_s %>
+<input type="hidden" value="<%=@animal.id%>" id="animal_id"/>
+<label>Date</label>
+<input type="date" name="sighting[date]" id="date"/><br>
+<label>Time</label>
+<input type="text" name="sighting[time]" id="time"/><br>
+<label>Latitude</label>
+<input type="text" name="sighting[latitude]" id="latitude"/><br>
+<label>Longitude</label>
+<input type="text" name="sighting[longitude]" id="longitude"/><br>
+<label>Region</label>
+  <%= select(:sighting, :region, options_for_select([["North", "North"],["East", "East"],["West", "West"],["South", "South"]]))%>
+  <br>
+  <br>
+<button id="create_sighting">Create A New Sighting</button>
