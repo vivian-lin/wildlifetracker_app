@@ -10,6 +10,7 @@ p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  color: white;
 }
 
 pre {
@@ -19,10 +20,10 @@ pre {
 }
 
 a {
-  color: #000;
+  color: white;
 
   &:visited {
-    color: #666;
+    color: lightblue;
   }
 
   &:hover {
@@ -63,11 +64,21 @@ div {
     margin: -7px;
     margin-bottom: 0px;
     background-color: #c00;
-    color: #fff;
+    color: white;
   }
 
   ul li {
     font-size: 12px;
     list-style: square;
   }
+}
+
+  h1, th, h3, label {
+    color: white;
+  }
+
+#background {
+  background-image: image-url("llama.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }

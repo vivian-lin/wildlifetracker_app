@@ -83,6 +83,17 @@ class SightingsController < ApplicationController
     end
   end
 
+  def get_sightings
+    @sightings = Sighting.all
+    sightings = []
+    @sightings.each do |sighting|
+      sightings << {
+        title: sighting.animal.common_name,
+        start: DateTime.new(sighting.date.year, sighting.date.month, sighting.date.day, sighting.time.hour, sighting.time.min, sighting.time.sec).to_s, id: sighting.id, animal_id: sighting.animal.id, url: Rails.application.routes.url_helpers.sighting_path(sighting.id) }
+    end
+    render :json => sightings.to_json
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_sighting
